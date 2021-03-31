@@ -1,2 +1,1 @@
-# ContraWR-contrast-with-the-world-representation
-Codes and Data Processing Files for our paper.
+# Code Scripts and Processing Files for JAMIA EEG Sleep Staging Paper
