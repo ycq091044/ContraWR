@@ -1,4 +1,4 @@
-# Code Scripts and Processing Files for JAMIA EEG Sleep Staging Paper
+# Code Scripts and Processing Files for EEG Sleep Staging Paper
 
 ### 1. Folder Tree
 - ./src_preprocess (data preprocessing files for SHHS and Sleep EDF)
