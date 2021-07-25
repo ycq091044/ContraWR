@@ -68,7 +68,7 @@ def Pretext(q_encoder, k_encoder, optimizer, Epoch, criterion, pretext_loader, t
             elif args.model in ['SimCLR']:
                 emb_aug1 = q_encoder(aug1, mid=False)
                 emb_aug2 = q_encoder(aug2, mid=False)
-            elif args.model in ['Ours']:
+            elif args.model in ['ContraWR']:
                 emb_aug1 = q_encoder(aug1, mid=False)
                 emb_aug2 = k_encoder(aug2, mid=False)
             elif args.model in ['MoCo']:
