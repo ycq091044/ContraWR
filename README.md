@@ -59,3 +59,14 @@ python -W ignore self_supervised.py --dataset SHHS --model ContraWR --n_dim 256
 # try other self-supervised models
 # change "ContraWR" to "MoCo", "SimCLR", "BYOL", "SimSiam"
 ```
+
+### Citation
+```bibtex
+@article{yang2021self,
+  title={Self-supervised EEG Representation Learning for Automatic Sleep Staging},
+  author={Yang, Chaoqi and Xiao, Danica and Westover, M Brandon and Sun, Jimeng},
+  journal={arXiv preprint arXiv:2110.15278},
+  year={2021}
+}
+```
+If you find this repo is useful, please cite our paper. Feel free to contact me <chaoqiy2@illinois.edu> for any problem.
