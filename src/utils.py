@@ -98,9 +98,9 @@ class SHHSLoader(torch.utils.data.Dataset):
         """
         Add noise to multiple ts
         Input: 
-            x: (n_length, n_channel)
+            x: (n_channel, n_length)
         Output: 
-            x: (n_length, n_channel)
+            x: (n_channel, n_length)
         """
         for i in range(self.n_channels):
             if np.random.rand() > ratio:
@@ -112,9 +112,9 @@ class SHHSLoader(torch.utils.data.Dataset):
         """
         Remove noise from multiple ts
         Input: 
-            x: (n_length, n_channel)
+            x: (n_channel, n_length)
         Output: 
-            x: (n_length, n_channel)
+            x: (n_channel, n_length)
         """
         for i in range(self.n_channels):
             rand = np.random.rand()
@@ -190,9 +190,9 @@ class SLEEPCALoader(torch.utils.data.Dataset):
         """
         Add noise to multiple ts
         Input: 
-            x: (n_length, n_channel)
+            x: (n_channel, n_length)
         Output: 
-            x: (n_length, n_channel)
+            x: (n_channel, n_length)
         """
         for i in range(self.n_channels):
             if np.random.rand() > ratio:
@@ -204,9 +204,9 @@ class SLEEPCALoader(torch.utils.data.Dataset):
         """
         Remove noise from multiple ts
         Input: 
-            x: (n_length, n_channel)
+            x: (n_channel, n_length)
         Output: 
-            x: (n_length, n_channel)
+            x: (n_channel, n_length)
         """
         for i in range(self.n_channels):
             rand = np.random.rand()
