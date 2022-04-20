@@ -14,22 +14,6 @@ import pickle
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--epochs', type=int, default=30, help="number of epochs")
-parser.add_argument('--lr', type=float, default=0.5e-3, help="learning rate")
-parser.add_argument('--n_dim', type=int, default=128, help="hidden units (for SHHS, 256, for Sleep, 128)")
-parser.add_argument('--weight_decay', type=float, default=1e-4, help="weight decay")
-parser.add_argument('--pretext', type=int, default=10, help="pretext subject")
-parser.add_argument('--training', type=int, default=10, help="training subject")
-parser.add_argument('--batch_size', type=int, default=256, help="batch_size")
-parser.add_argument('--m', type=float, default=0.9995, help="moving coefficient")
-parser.add_argument('--model', type=str, default='ContraWR', help="which model")
-parser.add_argument('--T', type=float, default=0.3,  help="T")
-parser.add_argument('--sigma', type=float, default=2.0,  help="sigma")
-parser.add_argument('--delta', type=float, default=0.2,  help="delta")
-parser.add_argument('--dataset', type=str, default='SLEEP', help="dataset")
-args = parser.parse_args()
-
 # evaluation design
 def task(X_train, X_test, y_train, y_test, n_classes):
             
@@ -148,6 +132,23 @@ def evaluate(q_encoder, train_loader, test_loader):
     return res
 
 if __name__ == '__main__':
+    
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--epochs', type=int, default=30, help="number of epochs")
+    parser.add_argument('--lr', type=float, default=0.5e-3, help="learning rate")
+    parser.add_argument('--n_dim', type=int, default=128, help="hidden units (for SHHS, 256, for Sleep, 128)")
+    parser.add_argument('--weight_decay', type=float, default=1e-4, help="weight decay")
+    parser.add_argument('--pretext', type=int, default=10, help="pretext subject")
+    parser.add_argument('--training', type=int, default=10, help="training subject")
+    parser.add_argument('--batch_size', type=int, default=256, help="batch_size")
+    parser.add_argument('--m', type=float, default=0.9995, help="moving coefficient")
+    parser.add_argument('--model', type=str, default='ContraWR', help="which model")
+    parser.add_argument('--T', type=float, default=0.3,  help="T")
+    parser.add_argument('--sigma', type=float, default=2.0,  help="sigma")
+    parser.add_argument('--delta', type=float, default=0.2,  help="delta")
+    parser.add_argument('--dataset', type=str, default='SLEEP', help="dataset")
+    args = parser.parse_args()
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print ('device:', device)
 

@@ -9,14 +9,6 @@ from sklearn.metrics import confusion_matrix
 from model import CNNEncoder2D_SHHS, CNNEncoder2D_SLEEP
 from tqdm import tqdm
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--epochs', type=int, default=100, help="number of epochs")
-parser.add_argument('--lr', type=float, default=2e-4, help="learning rate")
-parser.add_argument('--percent', type=float, default=100, help="train percent")
-parser.add_argument('--n_dim', type=int, default=128, help="hidden units")
-parser.add_argument('--dataset', type=str, default='SHHS', help="dataset")
-args = parser.parse_args()
-
 def train(model, optimizer, Epoch, loss_func, train_loader, test_loader):
 
     model.train()
@@ -75,6 +67,15 @@ def train(model, optimizer, Epoch, loss_func, train_loader, test_loader):
 
 
 if __name__ == '__main__':
+    
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--epochs', type=int, default=100, help="number of epochs")
+    parser.add_argument('--lr', type=float, default=2e-4, help="learning rate")
+    parser.add_argument('--percent', type=float, default=100, help="train percent")
+    parser.add_argument('--n_dim', type=int, default=128, help="hidden units")
+    parser.add_argument('--dataset', type=str, default='SHHS', help="dataset")
+    args = parser.parse_args()
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print ('device:', device)
 
